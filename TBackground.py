@@ -3,6 +3,7 @@ from platform import node
 from time import sleep
 import os
 from random import shuffle
+from time import gmtime, strftime
 
 consumer_key = "KCiLZRUT9CDU22lw5610r9Jru"
 consumer_secret = "aWrISWCnzXM6LKTlwV5w4w7VVbNHJfm7CZ8b2k4Cq9nVq7f0rM"
@@ -15,10 +16,11 @@ auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth)
 
-
-
 name = node()
+# print name
 if name == "William-Laptop-2":
+    directory = "C:/Users/wcjon/Desktop/Covers"
+elif name == "WillBox3000":
     directory = "C:/Users/wcjon/Desktop/Covers"
 else:
     directory = "C:/Users/William/Desktop/Programs/Twitter Background Bot/Covers"
@@ -47,7 +49,8 @@ while True:
                 continue
             break
 
-        print "Finished uploading number " + str(i) + "/" + str(len(name_list)) + " that is filename \"" + file + "\". Going again in 61 seconds."
-        sleep(61)
+        print "Finished uploading pic number " + str(i) + "/" + str(len(name_list)) + " at " + strftime("%H:%M:%S on %m/%d", gmtime()) + "."
+        print "It has a filename of \"" + str(file).split("/")[-1] + "\". Going again in 1 minute.\n"
+        sleep(60)
 
-    print "Restarting cycle."
+    print "Restarting cycle.\n\n\n"
