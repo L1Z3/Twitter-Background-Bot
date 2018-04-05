@@ -1,0 +1,6 @@
+[TBackgroundBot_Config]
+backgrounds_path = [path to folder for background]
+consumer_key = [app key]
+consumer_secret = [app secret]
+access_token = [access token]
+access_token_secret = [access token secret]
