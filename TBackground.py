@@ -4,11 +4,19 @@ from time import sleep
 import os
 from random import shuffle
 from time import localtime, strftime
+import ConfigParser
 
-consumer_key = "KCiLZRUT9CDU22lw5610r9Jru"
-consumer_secret = "aWrISWCnzXM6LKTlwV5w4w7VVbNHJfm7CZ8b2k4Cq9nVq7f0rM"
-access_token = "1483234068-iZ1sprqjCu76jYWWYaVXIriwjpbdkwCtRAvoKmR"
-access_token_secret = "mVbPdSb4iiwNI34isar16wzidWlajGm8RPVSTP9BRKIkp"
+
+def get_config(key):
+    return parser.get("TBackgroundBot_Config", key)
+
+
+parser = ConfigParser.RawConfigParser()
+parser.read(r"config.txt")
+consumer_key = get_config("consumer_key")
+consumer_secret = get_config("consumer_secret")
+access_token = get_config("access_token")
+access_token_secret = get_config("access_token_secret")
 
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
@@ -17,14 +25,9 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 name = node()
-# print name
-if name == "William-Laptop-2":
-    directory = "C:/Users/wcjon/Desktop/Covers"
-elif name == "WillBox3000":
-    directory = "C:/Users/wcjon/Desktop/Covers"
-else:
-    directory = "C:/Users/William/Desktop/Programs/Twitter Background Bot/Covers"
-# exit(0)
+
+directory = get_config("backgrounds_path")
+
 print "Starting header photo cycle."
 while True:
     name_list = []
