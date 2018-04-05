@@ -51,7 +51,7 @@ while True:
                 print "Something went wrong when uploading banner photo. Trying again in 10 seconds."
                 print e
                 sleep(10)
-
+                continue
             break
 
         print "Finished uploading pic number " + str(i) + "/" + str(len(name_list)) + " at " + strftime("%I:%M:%S %p on %m/%d.", localtime())
