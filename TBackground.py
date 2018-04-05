@@ -3,7 +3,7 @@ from platform import node
 from time import sleep
 import os
 from random import shuffle
-from time import gmtime, strftime
+from time import localtime, strftime
 
 consumer_key = "KCiLZRUT9CDU22lw5610r9Jru"
 consumer_secret = "aWrISWCnzXM6LKTlwV5w4w7VVbNHJfm7CZ8b2k4Cq9nVq7f0rM"
@@ -54,7 +54,7 @@ while True:
 
             break
 
-        print "Finished uploading pic number " + str(i) + "/" + str(len(name_list)) + " at " + strftime("%H:%M:%S on %m/%d", gmtime()) + "."
+        print "Finished uploading pic number " + str(i) + "/" + str(len(name_list)) + " at " + strftime("%H:%M:%S on %m/%d", localtime()) + "."
         print "It has a filename of \"" + str(file).split("/")[-1] + "\". Going again in 1 minute.\n"
         sleep(60)
 
