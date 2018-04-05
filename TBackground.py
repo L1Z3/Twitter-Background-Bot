@@ -47,6 +47,11 @@ while True:
                 print "Rate limited exceeded. Trying again in ten minutes."
                 sleep(600)
                 continue
+            except tweepy.error.TweepError as e:
+                print "Something went wrong when uploading banner photo. Trying again in 10 seconds."
+                print e
+                sleep(10)
+
             break
 
         print "Finished uploading pic number " + str(i) + "/" + str(len(name_list)) + " at " + strftime("%H:%M:%S on %m/%d", gmtime()) + "."
