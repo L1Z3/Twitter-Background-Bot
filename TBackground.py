@@ -58,7 +58,7 @@ while True:
             break
 
         print "Finished uploading pic number " + str(i) + "/" + str(len(name_list)) + " at " + strftime("%I:%M:%S %p on %m/%d.", localtime())
-        print "It has a filename of \"" + str(file).split("/")[-1] + "\". Going again in 1 minute.\n"
-        sleep(60)
+        print "It has a filename of \"" + str(name_list[i]).split("/")[-1] + "\". Going again in 15 seconds.\n"
+        sleep(15)
 
     print "Restarting cycle.\n\n\n"
