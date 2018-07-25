@@ -70,8 +70,8 @@ while True:
         if break_and_continue:
             continue
         print "Finished uploading pic number " + str(i+1) + "/" + str(len(name_list)) + " at " + strftime("%I:%M:%S %p on %m/%d.", localtime())
-        print "It has a filename of \"" + str(name_list[i]).split("/")[-1] + "\". Going again in 15 seconds.\n"
+        print "It has a filename of \"" + str(name_list[i]).split("/")[-1] + "\". Going again in 1 minute.\n"
         i += 1
-        sleep(15)
+        sleep(60)
 
     print "Restarting cycle.\n\n\n"
